@@ -1,0 +1,26 @@
+<div class="card border-dark mb-3">
+  <div class="card-header">Caracteríticas de Los Productos</div>
+  <div class="card-body text-dark">
+    <h5 class="card-title">Lista de Productos</h5>
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <td>#Productos</td>
+          <td>Nombre del Producto</td>
+          <td>Descripción del Producto</td>
+          <td>Valor del Producto</td>
+          <td>Detalle del Producto</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of product; let i =index">
+          <td>{{i+1}}</td>
+          <td>{{product.nombreProducto}}</td>
+          <td>{{product.descripcionProducto}}</td>
+          <td>{{product.precioVenta}}</td>
+          <td><button type="button" name="button" [routerLink]="['/product/form-product',product.id]" class="btn btn-primary">Detalle</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

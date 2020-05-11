@@ -1,0 +1,72 @@
+<div class="card border-dark mb-3">
+    <div class="card-header">{{title}}</div>
+    <div class="card bg-white text-dark">
+        <div class="card-body">
+            <form>
+                <div class="form-group row">
+                    <label for="nombre" class="col-form-label col-sm-2">Nombres</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" [(ngModel)]="clientes.nombreCliente" name="nombre">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="apellidos" class="col-form-label col-sm-2">Apellidos</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" [(ngModel)]="clientes.apellidoCliente" name="apellidos">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="tipoIdentificacion" class="col-form-label col-sm-2">Tipo de Identificación</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" [(ngModel)]="clientes.tipoIdentificacion"
+                            name="tipoIdentificacion">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="numeroIdentificacion" class="col-form-label col-sm-2">Número de Identificación</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" [(ngModel)]="clientes.numeroIdentificacion"
+                            name="numeroIdentificacion">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="telefonoCliente" class="col-form-label col-sm-2">Número de Celular</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" [(ngModel)]="clientes.telefonoCliente"
+                            name="telefonoCliente">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="domicilioCliente" class="col-form-label col-sm-2">Dirección</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" [(ngModel)]="clientes.domicilioCliente"
+                            name="domicilioCliente">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="correo" class="col-form-label col-sm-2">Correo Electrónico</label>
+                    <div class="col-sm-6">
+                        <input type="text" class="form-control" [(ngModel)]="clientes.correo" name="correo">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-sm-6">
+                        <button class="btn btn-primary" role="button" (click)='create()'
+                            *ngIf="!clientes.id else elseBlock">Crear</button>
+                        <ng-template #elseBlock>
+                            <button class="btn btn-primary" role="button" (click)='update()'
+                                *ngIf="clientes.id else elseBlock">Actualizar</button>
+                        </ng-template>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

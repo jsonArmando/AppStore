@@ -1,0 +1,39 @@
+<div class="card border-dark mb-3">
+    <div class="card-header">Tú Compra es 100% Segura</div>
+    <div class="card-body text-dark">
+        <h4 class="card-title">Mi lista de deseos</h4>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">Descripción</th>
+                    <th scope="col">Cantidad</th>
+                    <th scope="col">PreVenta</th>
+                    <th scope="col">Venta</th>
+                    <th scope="col">Detalle</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let factura of factura">
+                    <td>{{factura.nombreProducto}}</td>
+                    <td>{{factura.descripcionProducto}}</td>
+                    <td>{{factura.cantidadProducto}}</td>
+                    <td>{{factura.precioPreventa * factura.cantidadProducto| currency}}</td>
+                    <td>{{factura.precioVenta * factura.cantidadProducto | currency}}</td>
+                    <td><button type="button" name="button" class="btn btn-danger">Eliminar</button></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td>Total:</td>
+                    <td>{{ total | currency }}</td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+            </tbody>
+        </table>
+        <div class="my-2 text-left">
+            <button class="btn btn-rounded btn-primary" [routerLink]="['/clientes/form']">Finalizar Compra</button>
+        </div>
+    </div>
+</div>
